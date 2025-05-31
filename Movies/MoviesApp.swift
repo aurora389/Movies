@@ -4,7 +4,16 @@ import SwiftUI
 struct MoviesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                MoviesView()
+                    .tabItem {
+                        Label("Movies", systemImage: "film")
+                    }
+                SearchView()
+                    .tabItem {
+                        Label("Search", systemImage: "magnifyingglass")
+                    }
+            }
         }
     }
 }

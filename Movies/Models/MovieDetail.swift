@@ -8,7 +8,7 @@ struct MovieDetailsResponse {
     let genres: [Genre]
     let homepage: String
     let id: Int
-    let imdbId: String
+    let imdbId: String?
     let originCountry: [String]
     let originalLanguage: String
     let originalTitle: String
