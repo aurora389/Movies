@@ -1,7 +1,6 @@
 import Foundation
 
 class NetworkClient: MoviesAPI {
-
     private let session: URLSession
     private let decoder: JSONDecoder
     
@@ -20,6 +19,10 @@ class NetworkClient: MoviesAPI {
     
     func searchSeries(for query: String) async throws -> TVShowResponse {
         return try await fetch(from: .searchSeries(query: query), responseType: TVShowResponse.self)
+    }
+    
+    func movieDetails(id: Int) async throws -> MovieDetailsResponse {
+        return try await fetch(from: .movieDetails(id: id), responseType: MovieDetailsResponse.self)
     }
 }
 

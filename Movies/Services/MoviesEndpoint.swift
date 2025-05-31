@@ -4,6 +4,7 @@ enum MoviesEndpoint: Equatable {
     case topRatedMovies(page: Int)
     case searchMovies(query: String)
     case searchSeries(query: String)
+    case movieDetails(id: Int)
 }
 
 extension MoviesEndpoint: Endpoint {
@@ -16,6 +17,7 @@ extension MoviesEndpoint: Endpoint {
             case .topRatedMovies:  "/3/movie/popular"
             case .searchMovies: "/3/search/movie"
             case .searchSeries: "/3/search/tv"
+            case let .movieDetails(movieId): "/3/movie/\(movieId)"
         }
     }
 
@@ -33,6 +35,8 @@ extension MoviesEndpoint: Endpoint {
             return [URLQueryItem(name: "page", value: String(page))]
         case let .searchMovies(query: query), let .searchSeries(query: query):
             return [URLQueryItem(name: "query", value: query)]
+        case .movieDetails:
+            return nil
         }
     }
 }
