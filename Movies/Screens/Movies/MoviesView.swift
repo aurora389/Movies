@@ -14,10 +14,12 @@ struct MoviesView: View {
                     spacing: 16
                 ) {
                     ForEach(Array(viewModel.movies.enumerated()), id: \.offset) { index, movie in
-                        MovieItem(imageURL: movie.thumbnailURL, title: movie.originalTitle, movieId: movie.id, description: movie.overview)
-                            .onAppear {
-                                viewModel.loadMoviesIfNeeded(index: index)
-                            }
+                        NavigationLink(destination: MovieDetailView(movieId: movie.id)) {
+                            MovieItem(imageURL: movie.thumbnailURL, title: movie.originalTitle, movieId: movie.id, description: movie.overview)
+                                .onAppear {
+                                    viewModel.loadMoviesIfNeeded(index: index)
+                                }
+                        }
                     }
                 }
                 .padding()
