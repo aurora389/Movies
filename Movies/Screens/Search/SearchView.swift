@@ -33,9 +33,9 @@ struct SearchView: View {
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
                         ForEach(viewModel.movies) { movie in
-                            NavigationLink(destination: MovieDetailView(movieId: movie.id)) {
+//                            NavigationLink(destination: MovieDetailView(movieId: movie.id)) {
                                 MovieItem(imageURL: movie.thumbnailURL, title: movie.originalTitle, movieId: movie.id, description: movie.overview)
-                            }
+//                            }
                         }
                     }
                     .padding()
@@ -45,9 +45,9 @@ struct SearchView: View {
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
                         ForEach(viewModel.tvShows) { tvShow in
-                            NavigationLink(destination: MovieDetailView(movieId: tvShow.id)) {
+//                            NavigationLink(destination: MovieDetailView(movieId: tvShow.id)) {
                                 MovieItem(imageURL: tvShow.posterURL, title: tvShow.originalName, movieId: tvShow.id, description: tvShow.overview)
-                            }
+//                            }
                         }
                     }
                     .padding()
