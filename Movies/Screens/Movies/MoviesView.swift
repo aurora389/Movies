@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct MoviesView: View {
+
     @StateObject private var viewModel = MoviesViewModel()
     
     var body: some View {

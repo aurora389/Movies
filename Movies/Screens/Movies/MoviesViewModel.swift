@@ -2,6 +2,7 @@ import Foundation
 
 @MainActor
 final class MoviesViewModel: ObservableObject {
+
     @Published private(set) var movies: [Movie] = []
     
     private let moviesApi: MoviesAPI
@@ -45,7 +46,7 @@ private extension MoviesViewModel {
             loadedMoviesCount = movies.count
             dataIsLoading = false
         } catch {
-            
+            print(error.localizedDescription)
         }
     }
     

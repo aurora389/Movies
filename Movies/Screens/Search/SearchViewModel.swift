@@ -10,8 +10,8 @@ enum ScreenState {
 }
 
 enum Category: String, CaseIterable, Identifiable {
-    case tvShow
-    case movie
+    case tvShow = "TV Shows"
+    case movie = "Movies"
     var id: String { rawValue }
 }
 

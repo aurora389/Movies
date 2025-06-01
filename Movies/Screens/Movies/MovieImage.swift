@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct MovieImage: View {
+
     var imageURL: URL?
     
     var body: some View {

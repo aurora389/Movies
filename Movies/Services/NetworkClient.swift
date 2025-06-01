@@ -1,6 +1,7 @@
 import Foundation
 
 class NetworkClient: MoviesAPI {
+
     private let session: URLSession
     private let decoder: JSONDecoder
     

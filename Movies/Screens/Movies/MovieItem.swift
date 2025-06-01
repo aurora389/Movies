@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct MovieItem: View {
+
     var imageURL: URL?
     var title: String
     var movieId: Int

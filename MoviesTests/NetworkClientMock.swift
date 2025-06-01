@@ -56,5 +56,4 @@ class NetworkClientMock: MoviesAPI {
         }
         throw NSError(domain: "", code: 0, userInfo: nil)
     }
-    
 }
