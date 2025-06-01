@@ -1,6 +1,6 @@
 import Foundation
 
-struct MovieDetailsResponse {
+struct MovieDetailsResponse: Equatable {
     let adult: Bool
     let backdropPath: String
     let belongsToCollection: BelongsToCollection?
@@ -72,12 +72,12 @@ extension MovieDetailsResponse {
     }
 }
 
-struct Genre: Decodable {
+struct Genre: Decodable, Equatable {
     let id: Int
     let name: String
 }
 
-struct ProductionCompany: Decodable {
+struct ProductionCompany: Decodable, Equatable {
     let id: Int
     let logoPath: String?
     let name: String
@@ -91,7 +91,7 @@ struct ProductionCompany: Decodable {
     }
 }
 
-struct ProductionCountry: Decodable {
+struct ProductionCountry: Decodable, Equatable {
     let iso3166_1: String
     let name: String
     
@@ -101,7 +101,7 @@ struct ProductionCountry: Decodable {
     }
 }
 
-struct SpokenLanguage: Decodable {
+struct SpokenLanguage: Decodable, Equatable {
     let englishName: String
     let iso639_1: String
     let name: String
@@ -113,7 +113,7 @@ struct SpokenLanguage: Decodable {
     }
 }
 
-struct BelongsToCollection: Decodable {
+struct BelongsToCollection: Decodable, Equatable {
     let id: Int
     let name: String
     let posterPath: String?

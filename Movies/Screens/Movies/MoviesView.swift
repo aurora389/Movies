@@ -17,7 +17,9 @@ struct MoviesView: View {
                         NavigationLink(destination: MovieDetailView(movieId: movie.id)) {
                             MovieItem(imageURL: movie.thumbnailURL, title: movie.originalTitle, movieId: movie.id, description: movie.overview)
                                 .onAppear {
-                                    viewModel.loadMoviesIfNeeded(index: index)
+                                    Task {
+                                        await viewModel.loadMoviesIfNeeded(index: index)
+                                    }
                                 }
                         }
                     }
@@ -25,7 +27,7 @@ struct MoviesView: View {
                 .padding()
             }
             .task {
-                viewModel.loadInitialMovies()
+                await viewModel.loadInitialMovies()
             }
         }
     }

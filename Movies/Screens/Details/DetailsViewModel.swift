@@ -17,7 +17,6 @@ final class MovieDetailViewModel: ObservableObject {
         do {
             let result = try await moviesApi.movieDetails(id: movieId)
             movie = result
-            print(result)
         } catch {
             print(error.localizedDescription)
         }

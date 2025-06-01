@@ -16,24 +16,20 @@ final class MoviesViewModel: ObservableObject {
         self.moviesApi = moviesApi
     }
     
-    func loadInitialMovies() {
+    func loadInitialMovies() async {
         guard !isInitiallyLoaded else { return }
         page = 1
-        Task {
-            await requestMovies(for: page)
-        }
+        await requestMovies(for: page)
         isInitiallyLoaded = true
     }
     
-    func loadMoviesIfNeeded(index: Int) {
+    func loadMoviesIfNeeded(index: Int) async {
         guard let loadedMoviesCount, let totalMoviesAvailable else { return }
         guard index >= loadedMoviesCount - 1 else { return }
         
         if moreMoviesRemaining(loadedMoviesCount, totalMoviesAvailable) && !dataIsLoading {
             page += 1
-            Task {
-                await requestMovies(for: page)
-            }
+            await requestMovies(for: page)
         }
     }
 }

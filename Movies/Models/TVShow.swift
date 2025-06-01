@@ -1,6 +1,6 @@
 import Foundation
 
-struct TVShow: Identifiable  {
+struct TVShow: Identifiable, Equatable  {
     let adult: Bool
     let backdropPath: String?
     let genreIds: [Int]

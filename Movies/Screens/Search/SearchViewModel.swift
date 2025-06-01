@@ -24,7 +24,7 @@ final class SearchViewModel: ObservableObject {
     @Published var searchText = ""
     @Published var debouncedQuery = ""
     @Published var screenState: ScreenState = .initial
-    @Published var category: Category  = .tvShow
+    @Published var category: Category = .tvShow
     
     private let moviesApi: MoviesAPI
     private var task: Task<Void, Never>? = nil
